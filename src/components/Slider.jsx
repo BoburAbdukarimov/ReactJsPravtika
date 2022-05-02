@@ -1,33 +1,51 @@
-import React from 'react';
-import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
-import photoTwo from "./style/photo.jpg";
-import photoSree from "./style/IMG_3471.jpg";
-import photoFour from "./style/IMG_3498.jpg";
+    import React, { useRef, useState } from "react";
+    // Import Swiper React components
+    import { Swiper, SwiperSlide, } from "swiper/react";
+    import photoTwo from "./style/photo.jpg";
+    import photoSree from "./style/IMG_3471.jpg";
+    import photoFour from "./style/IMG_3498.jpg";
 
 
-const handleDragStart = (e) => e.preventDefault();
+    // Import Swiper styles
+    import "swiper/css";
+    import "swiper/css/pagination";
+    import "swiper/css/navigation";
+    import 'swiper/css/effect-fade';
+    import "swiper/css/autoplay";
 
-const items = [
-    <img className='photo' src={photoFour}  onDragStart={handleDragStart} />,
-    <img className='photo' src={photoTwo} width="100%" onDragStart={handleDragStart} />,
-    <img className='photo' src={photoSree} width="100%" onDragStart={handleDragStart} />
-];
 
-const Gallery = () => {
+    // import required modules
+    import { Pagination, Navigation, EffectFade, Autoplay  } from "swiper";
+
+    export default function App() {
     return (
-        <>     
+        <>
+        <Swiper
+            pagination={{
+            type: "progressbar",
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation, EffectFade, Autoplay]}
+            className="Slider"
+            effect="fade"
+            autoplay={{
+                delay: 3000,
+                disableOnInteraction: false
+            }}
+        >
+            <SwiperSlide>
+                <img src={photoTwo} alt="" />
+                <h1 className="SliderH">Bunyodkor maglub bo'ldi mehmoda</h1>
 
-        <AliceCarousel autoPlay 
-        mouseTracking 
-        autoPlayStrategy="none"
-        autoPlayInterval={4000}
-        animationDuration={1000}
-        animationType="fadeout"
-        infinite
-        items={items} />
+            </SwiperSlide>
+            <SwiperSlide>
+            <img src={photoFour} alt="" />
+                <h1 className="SliderH">1-лига. Дастлабки ғалаба!</h1>
+            </SwiperSlide>
+            <SwiperSlide>    
+                <img src={photoSree} alt="" />
+                <h1 className="SliderH">Суперлига. Мағлубият...</h1></SwiperSlide>
+        </Swiper>
         </>
-    
     );
-}
-export default Gallery;
+    }

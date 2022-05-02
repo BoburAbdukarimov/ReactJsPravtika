@@ -8,7 +8,6 @@ import Teams from './pages/Teams';
 import Store from './pages/Store';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
 function App() {
   return (
 <Router>

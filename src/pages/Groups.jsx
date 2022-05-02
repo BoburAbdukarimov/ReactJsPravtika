@@ -26,7 +26,8 @@ const Groups = () => {
                             <p>bunyodkor news 2020 <br /> <span>12.02.2020</span></p>
                             </Fade>
 
-                        </div></div>
+                        </div>
+                        </div>
                 </div>
                 <div className="row m-auto ">
                     <div className="col-md-4 d-flex justify-content-center">
@@ -47,7 +48,7 @@ const Groups = () => {
                         </Fade>
                         </div>
                     </div>
-                    <div className="col-md-4d-flex justify-content-center">
+                    <div className="col-md-4 d-flex justify-content-center">
                     <div className="imgs">
                         <Fade right>
                             <img onClick={()=> setOpen(true)} src={photo} alt="photo" />
