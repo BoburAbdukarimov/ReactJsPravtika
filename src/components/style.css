@@ -145,7 +145,6 @@ body{
     font-size: 15px;
     padding: 15px;
     font-weight: 600;
-    margin-right: 200px;
     
 }
 .ulMenu li:hover{
@@ -644,7 +643,7 @@ button:hover{
 	height: 460px;
 	background: #eee;
 	border-radius: 60% / 10%;
-	transform: translateY(-180px);
+	transform: translateY(-68px);
 	transition: .8s ease-in-out;
 }
 .login label{

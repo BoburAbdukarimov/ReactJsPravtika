@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import "./style.css"
 import { auth } from './config';
+import "./Nav.scss"
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 const Navbar = () => {
 const [menu, setMenu] = useState(false)
@@ -21,9 +22,13 @@ const googleSignInWithGoogle = ()=>{
     return (
         <div className='Navbar w-100 '>
             <div className="container-md d-flex justify-content-between align-items-sm-center" >
-                <div className="Hamburger">
+                {/* <div className="Hamburger">
                     <i onClick={showMenu} class="bi bi-list text-white size"></i>
-                </div>
+                </div> */}
+                            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle"> 
+            <div class='menu-button' onClick={showMenu}></div>
+                            </label>
                 <div className="menuBar text-decoration-none">
                     <Link className='text-decoration-noneml-3 mr-3' to="/">
                         <a >Home</a>
@@ -43,13 +48,13 @@ const googleSignInWithGoogle = ()=>{
                         <li> 
                             <Link to="/"> Home</Link></li>
                             <li>
-                            <Link to="/schedule">Schedule</Link> </li>
+                            <Link to="/schedule">News</Link> </li>
                             <li>
-                            <Link to="/groups">Groups</Link> </li>
+                            <Link to="/groups">Schedules</Link> </li>
                             <li>
-                            <Link to="/teams">Teams</Link> </li>
+                            <Link to="/teams">Contact</Link> </li>
                             <li>
-                            <Link to="/store">Store</Link> </li>
+                            <Link to="/store">Our team</Link> </li>
                     </ul>
                 </div>
             </div>

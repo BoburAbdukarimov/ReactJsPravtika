@@ -1,0 +1,50 @@
+    #menu-toggle {
+        display: none;
+    }
+    
+    .menu-button,
+    .menu-button::before,
+    .menu-button::after {
+        display: block;
+        background-color: #fff;
+        position: absolute;
+        height: 4px;
+        width: 30px;
+        transition: transform 800ms cubic-bezier(0.23, 1, 0.32, 1);
+        border-radius: 2px;
+    }
+    label {
+        color: #fff;
+        font-size: 2.3em;
+        margin-left: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    .menu-button::before {
+        content: '';
+        margin-top: -8px;
+    }
+    
+    .menu-button::after {
+        content: '';
+        margin-top: 8px;
+    }
+    
+    #menu-toggle:checked + .menu-button-container .menu-button::before {
+        margin-top: 0px;
+        transform: rotate(405deg);
+    }
+    
+    #menu-toggle:checked + .menu-button-container .menu-button {
+        background: rgba(255, 255, 255, 0);
+    }
+    
+    #menu-toggle:checked + .menu-button-container .menu-button::after {
+        margin-top: 0px;
+        transform: rotate(-405deg);
+    }
+    
